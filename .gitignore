@@ -1,0 +1,8 @@
+
+node_modules
+
+# Level DB
+app-db
+
+# OS X artifacts
+.DS_Store

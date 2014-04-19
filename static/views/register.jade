@@ -1,0 +1,26 @@
+extends base
+
+block head
+  title _app_ — Register
+
+block content
+  h1 Register for _app_
+
+  ul.error-msgs
+   each msg in messages
+    li.error-msg= msg
+
+  div#register
+    form(method='POST')
+      input(type='hidden', name='_csrf', value=token)
+      .field
+        label email
+        input#email(type='text', name='username')
+      .field
+        label password
+        input#password(type='password', name='password')
+      .field
+        label website
+        input#website(type='text', name='website')
+      .field
+        input#submit(type='submit', value='submit')
