@@ -16,8 +16,10 @@
     "jade": "0.32.x",
     "level": "0.12.x",
     "marked": "0.2.x",
+    "mongoose": "~3.8.8",
     "passport": "0.1.x",
-    "passport-local": "0.1.x"
+    "passport-local": "0.1.x",
+    "passport-local-mongoose": "~0.3.0"
   },
   "devDependencies": {
     "nodemon": "*"
