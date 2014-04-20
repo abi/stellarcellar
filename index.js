@@ -8,8 +8,7 @@ function App () {
   var opts = {
     name: 'Simple App',
     port: 9000,
-    dbPath: path.join(__dirname, './app-db'),
-    cookieSecret: 'secret'
+    cookieSecret: 'secret' // TODO: Get a better secret for the cookie
   };
 
   // Call the parent constructor
