@@ -27,5 +27,9 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/PeerCDN/node-simple-app/issues"
+  },
+  "scripts": {
+    "watch": "DEBUG='*,-connect:*,-express:*,-send' nodemon .",
+    "update": "npm prune && npm update"
   }
 }
