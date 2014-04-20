@@ -11,7 +11,7 @@ html
       #user-nav
         if user
           script.
-            var _csrf = '#{token}'
+            var _csrf = '#{csrfToken}'
           a#logout(href='javascript:void(0)') logout
         else
           a(href='/login') login
