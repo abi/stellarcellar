@@ -1,1 +1,1 @@
-exports.rootPath = __dirname
+exports.rootPath = __dirname;
