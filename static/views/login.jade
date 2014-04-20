@@ -12,7 +12,7 @@ block content
 
   div#login
     form(method='POST')
-      input(type='hidden', name='_csrf', value=token)
+      input(type='hidden', name='_csrf', value=csrfToken)
       .field
         label email
         input#email(type='text', name='username')
