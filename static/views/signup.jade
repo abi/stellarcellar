@@ -1,16 +1,16 @@
 extends base
 
 block head
-  title _app_ — Register
+  title _app_ — Sign Up
 
 block content
-  h1 Register for _app_
+  h1 Sign Up for _app_
 
   ul.error-msgs
    each msg in messages
     li.error-msg= msg
 
-  div#register
+  div#signup
     form(method='POST')
       input(type='hidden', name='_csrf', value=csrfToken)
       .field
