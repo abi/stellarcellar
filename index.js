@@ -21,8 +21,8 @@ App.prototype.init = function () {
   var self = this;
   var app = self.app;
 
-  app.get('/hello', function (req, res) {
-    res.end('Hello.');
+  app.get('/files', function (req, res) {
+    res.render('files');
   });
 };
 
