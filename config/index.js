@@ -9,7 +9,6 @@ exports.mongo = {
   port: 27017
 };
 
-
 exports.s3 = {
   cors: fs.readFileSync(path.join(__dirname, 's3-cors.xml'), 'utf8')
 };
