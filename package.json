@@ -35,7 +35,7 @@
   "scripts": {
     "watch": "npm run watch-server & npm run watch-client",
     "watch-server": "DEBUG='*,-connect:*,-express:*,-send' nodemon .",
-    "watch-client": "watchify client/index.js -o static/build/bundle.js & stylus -w stylus/index.styl -o static/build/",
+    "watch-client": "watchify client/index.js -o build/bundle.js & stylus -w stylus/index.styl -o build/",
     "update": "npm prune && npm update"
   }
 }
