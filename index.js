@@ -1,6 +1,6 @@
 var debug = require('debug')('test-app');
 var path = require('path');
-var SimpleApp = require('./lib/SimpleApp');
+var SimpleApp = require('./server/SimpleApp');
 
 function App () {
   var self = this;
