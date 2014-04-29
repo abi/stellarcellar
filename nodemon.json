@@ -1,6 +1,6 @@
 {
   "verbose": true,
   "restartable": "rs",
-  "ignore": ["static/js/*"],
+  "ignore": ["client/*"],
   "execMap": {}
 }
