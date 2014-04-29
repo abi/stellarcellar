@@ -20,6 +20,7 @@
     "passport": "0.1.x",
     "passport-local": "0.1.x",
     "passport-local-mongoose": "~0.3.0",
+    "stylus": "^0.44.0",
     "watchify": "^0.8.2"
   },
   "devDependencies": {
@@ -34,7 +35,7 @@
   "scripts": {
     "watch": "npm run watch-server & npm run watch-client",
     "watch-server": "DEBUG='*,-connect:*,-express:*,-send' nodemon .",
-    "watch-client": "watchify static/js/index.js -o static/build/bundle.js",
+    "watch-client": "watchify static/js/index.js -o static/build/bundle.js & stylus -w static/css/index.styl -o static/build/",
     "update": "npm prune && npm update"
   }
 }
