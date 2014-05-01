@@ -1,7 +1,12 @@
 module.exports = SimpleApp
 
 var bcrypt = require('bcrypt');
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var compression = require('compression');
+var csrf = require('csurf');
 var debug = require('debug')('simple-app');
+var errorHandler = require('errorhandler');
 var express = require('express');
 var expressValidator = require('express-validator');
 var flash = require('connect-flash');
@@ -12,9 +17,11 @@ var mongoose = require('mongoose');
 var path = require('path');
 var passport = require('passport');
 var passport_local = require('passport-local');
+var session = require('express-session');
 
 // Store for session data
-var MongoStore = require('connect-mongo')(express);
+// HACK: See https://github.com/kcbanner/connect-mongo/issues/109
+var MongoStore = require('connect-mongo')({ session: session });
 
 var config = require('../config');
 var User = require('./models').User;
@@ -40,12 +47,12 @@ SimpleApp.prototype.start = function (cb) {
 
   app.disable('x-powered-by'); // disable advertising
   app.use(util.expressLogger(debug)); // readable logs
-  app.use(express.compress()); // gzip
+  app.use(compression()); // gzip
   app.use(expressValidator()); // validate user input
-  app.use(express.bodyParser()); // parse POST parameters
-  app.use(express.cookieParser(self.cookieSecret)); // parse cookies
+  app.use(bodyParser()); // parse POST parameters
+  app.use(cookieParser(self.cookieSecret)); // parse cookies
   // manage session cookies
-  app.use(express.session({
+  app.use(session({
     store: new MongoStore({
       db: config.mongo.db,
       host: config.mongo.host,
@@ -54,7 +61,7 @@ SimpleApp.prototype.start = function (cb) {
     }),
     secret: self.cookieSecret
   }));
-  app.use(express.csrf()); // protect against CSRF
+  app.use(csrf()); // protect against CSRF
   app.use(passport.initialize()); // use passport for user auth
   app.use(passport.session()); // have passport use cookies for user auth
   app.use(flash()); // errors during login are propogated by passport using `req.flash`
@@ -164,7 +171,7 @@ SimpleApp.prototype.start = function (cb) {
   // and add middleware or static files
   cb && cb();
 
-  app.use(express.errorHandler());
+  app.use(errorHandler());
 
   self.server.listen(self.port, function (err) {
     if (!err) {
