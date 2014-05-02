@@ -1,6 +1,5 @@
 module.exports = SimpleApp
 
-var bcrypt = require('bcrypt');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var compression = require('compression');
