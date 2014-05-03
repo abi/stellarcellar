@@ -6,15 +6,15 @@ block head
 block content
   h1 Upload any file by dragging here
 
-  form(action='http://johnsmith.s3.amazonaws.com/', method='post', enctype='multipart/form-data')
+  form(action='http://stellarcellar.s3.amazonaws.com/', method='post', enctype='multipart/form-data')
     input(type='input', name='key', value='user/eric')
     input(type='hidden', name='acl', value='public-read')
     input(type='hidden', name='success_action_redirect', value='/files')
     input(type='input', name='Content-Type', value='image/jpeg')
-    input(type='hidden', name='x-amz-meta-uuid', value='14365123651274')
-    input(type='input', name='x-amz-meta-tag', value='')
-    input(type='hidden', name='AWSAccessKeyId', value='AKIAISQZDOVWGELFSUXA')
-    input(type='hidden', name='Policy', value='POLICY')
-    input(type='hidden', name='Signature', value='SIGNATURE')
+    //- input(type='hidden', name='x-amz-meta-uuid', value='14365123651274')
+    //- input(type='input', name='x-amz-meta-tag', value='')
+    //- input(type='hidden', name='AWSAccessKeyId', value='AKIAISQZDOVWGELFSUXA')
+    //- input(type='hidden', name='Policy', value='POLICY')
+    //- input(type='hidden', name='Signature', value='SIGNATURE')
     input(type='file', name='file')
     input(type='submit', name='submit', value='Upload to Amazon S3')
