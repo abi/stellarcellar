@@ -28,7 +28,8 @@
     "watchify": "^0.8.2"
   },
   "devDependencies": {
-    "nodemon": "*"
+    "jscs": "^1.4.0",
+    "nodemon": "^1.0.17"
   },
   "keywords": [],
   "author": "Abi Raja",
